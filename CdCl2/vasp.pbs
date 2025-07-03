@@ -1,0 +1,8 @@
+#!/bin/bash
+#PBS -q batch
+#PBS -N testing
+#PBS -l nodes=1:ppn=32
+cd $PBS_O_WORKDIR
+export OMP_NUM_THREADS=1
+source /home/abdul/.bashrc 
+mpirun -np 32 /home/abdul/VASP/vasp.6.1.2.fixcell/bin/vasp_std > vasprun.log
